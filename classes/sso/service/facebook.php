@@ -1,3 +1,3 @@
-<?php defined('SYSPATH') or die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct script access.');
 
-abstract class SSO_Service_Facebook extends SSO_Core_Service_Facebook {} // End SSO_Service_Facebook
+class SSO_Service_Facebook extends Kohana_SSO_Service_Facebook {}
