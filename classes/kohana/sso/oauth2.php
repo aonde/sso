@@ -25,7 +25,7 @@ abstract class Kohana_SSO_OAuth2 extends SSO {
 		$this->provider = OAuth2_Provider::factory($this->sso_service);
 
 		// Load the consumer
-		$this->client = OAuth2_Client::factory(Kohana::config("oauth.{$this->sso_service}"));
+		$this->client = OAuth2_Client::factory(Kohana::$config->load('oauth')->{$this->sso_service});
 
 		if ($token = $this->session->get($this->key('access')))
 		{
