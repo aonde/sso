@@ -73,8 +73,9 @@ abstract class Kohana_SSO_OAuth2 extends SSO {
 		}
 
 		// We will need a callback URL for the user to return to
-		$callback = $this->request->url(NULL, TRUE);
-
+		$callback = $this->request->url(TRUE, TRUE);
+        
+        
 		// Add the callback URL to the consumer
 		$this->client->callback($callback);
 

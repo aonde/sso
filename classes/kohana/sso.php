@@ -31,8 +31,7 @@ abstract class Kohana_SSO {
 		// Load SSO config
         /* v3.2
         */
-        $service = $this->sso_service;
-		$this->sso_config = Kohana::$config->load('oauth')->$service; 
+		$this->sso_config = Kohana::$config->load('oauth')->{$this->sso_service}; 
 	}
 
 	/**
