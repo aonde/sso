@@ -10,6 +10,7 @@ class Auth_ORM extends Kohana_Auth_ORM {
 	 */
 	public function sso($provider)
 	{
+	     
 		return SSO::factory($provider)->login();
 	}
 	

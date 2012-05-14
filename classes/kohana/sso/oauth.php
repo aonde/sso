@@ -40,6 +40,10 @@ abstract class Kohana_SSO_OAuth extends SSO {
 	
 	public function login()
 	{
+	   
+      
+    
+    
 		// Attempt to complete signin
 		if ($verifier = Arr::get($_REQUEST, 'oauth_verifier'))
 		{
@@ -70,13 +74,17 @@ abstract class Kohana_SSO_OAuth extends SSO {
 					'user_data' => $this->provider->user_data($this->consumer, $token),
 					'provider' => $this->provider->name,
 				);
-				
+                
+				// passo2
+               
 				if ($this->complete_signup($data) === TRUE)
 				{
+				    
 					return TRUE;
 				}
 				else
 				{
+				 
 					$this->request->redirect('');
 				}
 			}

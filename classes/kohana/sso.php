@@ -55,15 +55,23 @@ abstract class Kohana_SSO {
 	
 	public function complete_signup(array $data)
 	{
+	    // passo 3 ele volta para aqui.
+        
 		$provider_field = $this->sso_service.'_id';
-		
+        // passo1
 		$user = ORM::factory('user')->find_sso_user($provider_field, $data['user_data']);
+        
 		if ( ! $user->loaded())
 		{
+         
+          // vai mandar para modules/sso/classes/kohana/sso/oauth.php line 78
 			$this->session->set('complete_signup', serialize($data));
+          
 		}
 		else
 		{
+		  // Não achamos usuário temos que cadastra-lo então
+		  
 			// Sign a previous registered user
 			Auth::instance()->force_sso_login($user);
 			
