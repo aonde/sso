@@ -1,3 +1,3 @@
-<?php defined('SYSPATH') or die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct script access.');
 
-abstract class SSO_Service_Twitter extends SSO_Core_Service_Twitter {} // End SSO_Service_Twitter
+class SSO_Service_Twitter extends Kohana_SSO_Service_Twitter {}
